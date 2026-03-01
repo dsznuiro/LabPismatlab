@@ -1,0 +1,30 @@
+clear;
+clc;
+
+G = tf(1,[20 2 0]);
+
+figure;
+subplot(2,2,1);
+impulse(G);
+grid;
+title('Odpowiedź impulsowa');
+xlabel('Czas');
+ylabel('Odpowiedź');
+subplot(2,2,2);
+step(G);
+grid;
+title('Odpowiedź skokowa');
+xlabel('Czas');
+ylabel('Odpowiedź');
+subplot(2,2,3);
+pzmap(G);
+grid;
+title('Zera i bieguny');
+xlabel('Re');
+ylabel('Im');
+subplot(2,2,4);
+nyquist(G);
+grid;
+title('Charakterystyka Nyquista');
+xlabel('Re');
+ylabel('Im');
