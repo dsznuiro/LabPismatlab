@@ -1,0 +1,23 @@
+%Zadanie 4
+
+%Obiekt inercyjny pierwszego rzędu - RC
+%Obiekt różniczkujący rzeczywisty - CR
+
+clear;
+clc;
+
+R=100;
+C=0.001;
+
+G1 = tf(1,[R*C 1])
+G2 = tf([R*C 0],[R*C 1]);
+
+% Wykreślenie charakterystyki Bode'a obiektu inercyjnego pierwszego rzedu i różniczkującego rzeczywistego
+subplot(2,1,1);
+bode(G1);
+grid;
+title('Charakterystyka Bodea - obiekt inercyjny pierwszego rzedu');
+subplot(2,1,2);
+bode(G2);
+grid;
+title('Charakterystyka Bodea - obiekt różniczkujący rzeczywisty');
