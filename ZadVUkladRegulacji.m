@@ -13,16 +13,15 @@ Go=series(sys1,sys2);
 Gz=feedback(Go,1);
 Ge = feedback(1, Go);
 
-subplot(2,1,1);
+figure;
 step(3*Gz);
-grid;
-title('Odpowiedz skokowa układu regulacji');
-xlabel('Czas [s]');
-ylabel('y(t)');
-
-subplot(2,1,2);
+hold on;
 step(3*Ge);
+hold on;
+
 grid;
-title('Odpowiedz skokowa uchybu regulacji');
+title('Odpowiedz skokowa układu regulacji i uchyb regulacji na wymuszenie x(t)=3(t)');
 xlabel('Czas [s]');
 ylabel('y(t)');
+legend('Wyjscie kuładu y(t)', 'Uchyb regulacji e(t)');
+
